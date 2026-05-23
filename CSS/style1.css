@@ -2,7 +2,7 @@
     font-family: 'Courier New';
 }
 h1,h3{
-    color: red;
+    color: red !important;
 }
 #login{
     background-color: white;
@@ -12,4 +12,29 @@ h1,h3{
 }
 .upvote{
     background-color: blue;
+}
+p a{
+    color: purple;
+}
+p+h3{
+    text-decoration: underline;
+}
+div > input{
+    background-color: aqua ;
+}
+button:hover{
+    background-color: black;
+    color: white;
+}
+button:active{
+    background-color: palevioletred;
+}
+h1::first-letter{
+    color: black;
+}
+h1::selection{
+    color: blueviolet;
+}
+h1,h3{
+    color: mediumblue;
 }

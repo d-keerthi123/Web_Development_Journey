@@ -1,0 +1,21 @@
+div{
+    height: 200px;
+    width: 500px;
+    background-color: paleturquoise;
+    /* border-width: 5px;
+    border-color: black;
+    border-style: solid; */
+
+    border: 5px solid purple;
+    /* border-left-color:black;
+    border-left-style:solid;
+    border-left-width: 6px; */
+
+    border-radius: 10px;
+
+    padding: 10px;
+    margin:10px 20px 30px;
+}
+h1{
+    margin:0px
+}

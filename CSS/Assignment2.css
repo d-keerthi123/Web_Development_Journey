@@ -1,0 +1,33 @@
+/* Give the h1 header a uniqueid-“mainTopic” & set its color  to blue using the id  selector. */
+#mainTopic{
+    color: blue;
+}
+
+*{
+    text-align: center;
+}
+h1,h3,h5{
+    font-family: Georgia;
+}
+ .para{
+    background-color: cornflowerblue;
+    color: white;
+}
+div button{
+    background-color: purple;
+    color: azure;
+}
+
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
+p:nth-of-type(odd){
+    color: yellow;
+}
+h1::first-letter{
+    color: red;
+}
+input[type="checkbox"]:checked + label {
+    color:green;
+}

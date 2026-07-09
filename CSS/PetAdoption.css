@@ -24,3 +24,8 @@ h4 {
 span{
     color: #9d6f24;
 }
+@media(max-width:375px){
+    #pets{
+        flex-wrap: wrap;
+    }
+}

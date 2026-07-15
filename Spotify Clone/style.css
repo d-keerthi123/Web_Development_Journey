@@ -197,7 +197,38 @@ a{
 }
 .album{
   width: 25%;
+  display: flex;
+  align-items: center;
 }
+.album-img{
+ width: 50px;
+ height: 50px;
+ border-radius: 4px;
+ margin:0.5rem 1.5rem 0.5rem 2rem;
+}
+.album-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.album-title{
+  font-weight: 600;
+}
+.album-singer{
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.album-icons{
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.album-icons i{
+  margin-right: 1rem;
+}
+
 .player{
   width: 50%;
 }
@@ -206,6 +237,26 @@ a{
   display:flex;
   justify-content: center;
   align-items: center;
+}
+
+.volume-bar{
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.volume-bar::-webkit-slider-runnable-track{
+  background-color: #ddd;
+  border-radius: 100px;
+  height: 0.2rem;
+}
+.volume-bar::-webkit-slider-thumb{
+  -webkit-appearance: none;  
+  appearance: none;
+  height: 1rem;
+  width: 1rem;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin-top: -6px;
 }
 
 .player-control-icon{

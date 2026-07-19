@@ -91,5 +91,5 @@ let n2=47852;
 if(n1%10 == n2%10){
     console.log("have same last digit");
 }else{
-    console.log("doesn't have have same last digit");
+    console.log("doesn't have same last digit");
 }

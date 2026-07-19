@@ -26,9 +26,23 @@ let colour="red";
 if(colour == "red"){
     console.log("STOP");
 }
-if(colour =="yellow"){
+else if(colour =="yellow"){
     console.log("SLOW DOWN");
 }
-if(colour=="green"){
+else if(colour=="green"){
     console.log("GO");
+}
+
+//PQ2
+
+let size="XL";
+
+if(size=="XL"){
+    console.log("Price is : 250");
+}else if(size=="L"){
+    console.log("Price is : 200");
+}else if(size=="M"){
+    console.log("Price is : 100");
+}else if(size=="S"){
+    console.log("Price is : 50");
 }

@@ -63,3 +63,38 @@ const classInfo2=[
     }
 ];
 
+//Random Integers
+
+// let num=Math.random;
+// num=num*10;
+// num.Math.floor(num);
+// num=num+1;
+
+//OR
+// Math.floor(Math.random()*10)+1;
+
+//Gessing game
+
+const max=prompt("Enter the max number");
+
+const random=Math.floor(Math.random()*max)+1;
+console.log(random);
+
+let guess=prompt("Guess the number");
+
+while(true){
+    if(guess=="quit"){
+        console.log("user quit");
+        break;
+    }
+
+    if(guess==random){
+        console.log("you are right ! Congrats.",random);
+        break;
+    }else if(random > guess){
+        guess=prompt("Too low ! try a bigger number");
+    }else{
+        guess = prompt("Too high! Try a smaller number:");
+    }
+    
+}

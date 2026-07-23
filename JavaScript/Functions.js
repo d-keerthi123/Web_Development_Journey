@@ -115,3 +115,43 @@ const cal={
     }
 };
 console.log(cal.add(1,5));
+
+//Arrow Functions
+
+const sum2=(a,b)=>{
+    console.log(a+b);
+};
+sum2(3,4);
+
+//Set Timeout 
+console.log("Hello");
+setTimeout (()=>{
+    console.log("This is keerthi")
+},1000);
+console.log("Welcome!");
+
+//Set Interval
+// console.log("Hello");
+// setInterval (()=>{
+//     console.log("This is keerthi")
+// },1000);
+// console.log("Welcome!");
+
+//This with Arrow Functions
+
+const s={
+    name:"keerthi",
+    marks:100,
+    prop:"this", //global scope
+
+    getName:function(){
+        console.log(this); // here "this" is calling object which is student
+        return this.name;
+    },
+
+    getMarks:()=>{
+        console.log(this);//here its the scope of the parent's which is window (lexical scope)
+        //in arrow functions the this is the this of the calling object
+        return this.marks;
+    }
+};

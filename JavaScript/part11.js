@@ -20,31 +20,75 @@ changeColor("red", 1000, () => {
 
 //promises
 
-function saveToDb(data,success,failure){
-    let internetSpeed=Math.floor(Math.random()*10)+1;
-    console.log(internetSpeed);
-    if(internetSpeed >=4 ){
-        success();
-    }else{
-        failure();
-    }
+// function saveToDb(data,success,failure){
+//     let internetSpeed=Math.floor(Math.random()*10)+1;
+//     console.log(internetSpeed);
+//     if(internetSpeed >=4 ){
+//         success();
+//     }else{
+//         failure();
+//     }
     
+// }
+// saveToDb("Hello, this is keerthi.",()=>{
+//     console.log("Success:The data was saved"); 
+
+//     saveToDb("I am a 3rd yr student",()=>{
+//         console.log("Success2 :The data2 was saved"); 
+
+//         saveToDb("I am learning Full-Stack Web Development",()=>{
+//             console.log("Success3 :The data3 was saved");
+
+//         },()=>{
+//              console.log("Failure: Weak Internet ! The data was not saved");
+//         })
+//     },()=>{
+//         console.log("Failure2: Weak Internet ! The data2 was not saved");
+//     })
+// },()=>{
+//     console.log("Failure: Weak Internet ! The data was not saved");
+// });
+
+function saveToDb(data){
+    return new Promise((resolve,reject)=>{
+        let internetSpeed=Math.floor(Math.random()*10)+1;
+        console.log(internetSpeed);
+        if(internetSpeed >=4 ){
+            resolve("Success: data was saved");
+        }else{
+            reject("Failure: weak connection!");
+        }
+    });
 }
-saveToDb("Hello, this is keerthi.",()=>{
-    console.log("Success:The data was saved"); 
 
-    saveToDb("I am a 3rd yr student",()=>{
-        console.log("Success2 :The data2 was saved"); 
+//then() & catch() methods
+// let request=saveToDb("Hello"); //req=promise object
+// request.then(()=>{
+//     console.log("Promise was resolved");
+//     console.log(request);
+// })
+// .then(()=>{
+//     console.log("Promise2 was resolved"); 
+//     console.log(request);
+// })
+// .catch(()=>{
+//     console.log("Promise was rejected");
+//     console.log(request);
+// })
 
-        saveToDb("I am learning Full-Stack Web Development",()=>{
-            console.log("Success3 :The data3 was saved");
-            
-        },()=>{
-             console.log("Failure: Weak Internet ! The data was not saved");
-        })
-    },()=>{
-        console.log("Failure2: Weak Internet ! The data2 was not saved");
-    })
-},()=>{
-    console.log("Failure: Weak Internet ! The data was not saved");
-});
+//improved version
+saveToDb("Hello")
+.then(()=>{
+    console.log("Promise was resolved");
+    console.log(request);
+    return saveToDb("Hello world");
+
+})
+.then(()=>{
+    console.log("Promise2 was resolved"); //promise chaining
+    console.log(request);
+})
+.catch(()=>{
+    console.log("Promise was rejected");
+    console.log(request);
+})

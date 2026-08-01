@@ -1,22 +1,22 @@
-let h1=document.querySelector("h1");
+// let h1=document.querySelector("h1");
 
-//callback hell
-function changeColor(color, delay, nextColorChange) {
-    setTimeout(() => {
-        h1.style.color = color;
-        if (nextColorChange) nextColorChange();
-    }, delay);
-}
+// //callback hell
+// function changeColor(color, delay, nextColorChange) {
+//     setTimeout(() => {
+//         h1.style.color = color;
+//         if (nextColorChange) nextColorChange();
+//     }, delay);
+// }
 
-changeColor("red", 1000, () => {
-    changeColor("orange", 1000, () => {
-        changeColor("green", 1000, () => {
-            changeColor("yellow", 1000, () => {
-                changeColor("blue", 1000);
-            });
-        });
-    });
-});
+// changeColor("red", 1000, () => {
+//     changeColor("orange", 1000, () => {
+//         changeColor("green", 1000, () => {
+//             changeColor("yellow", 1000, () => {
+//                 changeColor("blue", 1000);
+//             });
+//         });
+//     });
+// });
 
 //promises
 
@@ -49,17 +49,17 @@ changeColor("red", 1000, () => {
 //     console.log("Failure: Weak Internet ! The data was not saved");
 // });
 
-function saveToDb(data){
-    return new Promise((resolve,reject)=>{
-        let internetSpeed=Math.floor(Math.random()*10)+1;
-        console.log(internetSpeed);
-        if(internetSpeed >=4 ){
-            resolve("Success: data was saved");
-        }else{
-            reject("Failure: weak connection!");
-        }
-    });
-}
+// function saveToDb(data){
+//     return new Promise((resolve,reject)=>{
+//         let internetSpeed=Math.floor(Math.random()*10)+1;
+//         console.log(internetSpeed);
+//         if(internetSpeed >=4 ){
+//             resolve("Success: data was saved"); //result
+//         }else{
+//             reject("Failure: weak connection!");//error
+//         }
+//     });
+// }
 
 //then() & catch() methods
 // let request=saveToDb("Hello"); //req=promise object
@@ -77,18 +77,67 @@ function saveToDb(data){
 // })
 
 //improved version
-saveToDb("Hello")
-.then(()=>{
-    console.log("Promise was resolved");
-    console.log(request);
-    return saveToDb("Hello world");
+// saveToDb("Hello")
+// .then(()=>{
+//     console.log("Promise was resolved");
+//     console.log(request);
+//     return saveToDb("Hello world");
 
+// })
+// .then(()=>{
+//     console.log("Promise2 was resolved"); //promise chaining
+//     console.log(request);
+// })
+// .catch(()=>{
+//     console.log("Promise was rejected");
+//     console.log(request);
+// })
+
+//result /errors in promises
+// saveToDb("Hello")
+// .then((result)=>{
+//     console.log("Result : ",result);
+//     console.log("Promise1 was resolved");
+//     return saveToDb("Hello world");
+
+// })
+// .then((result)=>{
+//     console.log("Result : ",result);
+//     console.log("Promise2 was resolved");
+// })
+// .catch((error)=>{
+//     console.log("Error : ",error);
+//     console.log("Promise was rejected");
+    
+// })
+
+
+//callback hell --->promises code
+
+let h1=document.querySelector("h1");
+
+//callback hell
+function changeColor(color,delay) {
+
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+        h1.style.color = color;
+        resolve("colour changed");
+    }, delay);
+    });
+}
+let req=changeColor("red",1000);
+console.log(req);
+
+changeColor("red",1000)
+.then(()=>{
+    console.log("Red color was completed");
+    return changeColor("pink",1000);
 })
 .then(()=>{
-    console.log("Promise2 was resolved"); //promise chaining
-    console.log(request);
+    console.log("pink color was completed");
+    return changeColor("teal",1000);
 })
-.catch(()=>{
-    console.log("Promise was rejected");
-    console.log(request);
+.then(()=>{
+    console.log("Teal color was completed");
 })

@@ -1,23 +1,23 @@
 //Async function
-// async function greet(success){
-//     if(success){
-//          return "hello"; //returns a promise
-//     }
-//     throw "404 Page not found ";
-// }
-// greet(false)
-// .then((result)=>{
-//     console.log("Promise was resolved");
-//     console.log("Result :",result);
-// })
-// .catch((error)=>{
-//     console.log("Promise was rejected");
-//     console.log("Error :",error);
-// })
+async function greet(success){
+    if(success){
+         return "hello"; //returns a promise
+    }
+    throw "404 Page not found ";
+}
+greet(false)
+.then((result)=>{
+    console.log("Promise was resolved");
+    console.log("Result :",result);
+})
+.catch((error)=>{
+    console.log("Promise was rejected");
+    console.log("Error :",error);
+})
 
-// let demo= async ()=>{
-//     return 5; //returns promise
-// }
+let demo= async ()=>{
+    return 5; //returns promise
+}
 
 //Await keyword &handling rejections
 
@@ -50,3 +50,22 @@ async function demo2(){
     console.log("This is the demo for await keyword and handling rejections");
 }
 demo2();
+
+
+//Accessing data from json
+let jsonRes='{"name": "Keerthi","age": 20,"city": "Chennai"}';  //json 
+
+let data=jsonRes;
+console.log("JSON to js object: ",JSON.parse(data));  //json -->js object
+console.log(JSON.parse(data).name);
+
+let student={  //js object
+    name:"keerthi",
+    age:20,
+    marks:9.38
+};
+console.log(" js object  to json :",JSON.stringify(student)); //js object--> json format
+
+
+
+

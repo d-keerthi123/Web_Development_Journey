@@ -67,5 +67,63 @@ let student={  //js object
 console.log(" js object  to json :",JSON.stringify(student)); //js object--> json format
 
 
+//My First API Request
+let url="https://catfact.ninja/fact";
 
+// console.log(fetch(url));//returns a promise
 
+// fetch(url)
+// .then((response)=>{
+//     console.log(response);
+//     // console.log(response.json());
+//     response.json().then((data)=>{
+//         console.log(data);
+//     })
+// })
+// .catch((error)=>{
+//     console.log(error)
+// }
+// )
+
+//improved version
+// fetch(url)
+// .then((response)=>{
+//     console.log(response);
+//     return response.json()
+// })
+// .then((data)=>{
+//     console.log(data);
+// })
+// .catch((error)=>{
+//     console.log(error)
+// });
+
+//For 2 api calls
+fetch(url)
+.then((response)=>{
+    return response.json()
+})
+.then((data)=>{
+    console.log("data1 : ",data.fact);
+    return fetch(url);
+})
+.then((response)=>{
+    return response.json()
+})
+.then((data)=>{
+    console.log("data2 : ",data.fact);
+})
+.catch((error)=>{
+    console.log(error)
+});
+
+//using fetch with async and await
+async function getFacts(){
+    try{
+        let res=await fetch(url);
+        let data=await res.json();
+        console.log(data);
+    }catch(e){
+        console.log("ERROR: ",e);
+    }
+}

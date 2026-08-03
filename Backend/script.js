@@ -10,8 +10,11 @@
 //     console.log("Hello to :",args[i]);
 //  }
 
-const value=require("./math");
-console.log(value);
+// const value=require("./math");  //export a single file
+// console.log(value);
 
-console.log(value.sum(4,5));
-console.log(value.mul(4,5));
+// console.log(value.sum(4,5));
+// console.log(value.mul(4,5));
+
+const info=require("./Fruits"); //export a directory
+console.log(info);

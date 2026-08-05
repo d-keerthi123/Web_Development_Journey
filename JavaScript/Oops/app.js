@@ -37,7 +37,7 @@ let p1=new Person("keerthi",20);
 //Inheritance
 class Student extends Person{
     constructor(name,age,marks){
-        super(name,age);
+        super(name,age);//parent class constructor is being called
         this.marks=marks;
     }
     greet(){

@@ -153,6 +153,44 @@ app.patch("/user/:id",(req,res)=>{
     }
 });
 
+
+//Delete route
+app.delete("/user/:id",(req,res)=>{
+    let {id}=req.params;
+
+    let q=`delete from user where id=?`;
+    try{
+        connection.query(q,[id],(err, result) =>{
+            if(err) throw err;
+
+            res.redirect("/user");
+        });
+    }
+    catch(err){
+        console.log(err);
+        res.send("Some error in database");
+    }
+    
+});
+
+//Add user
+app.post("/user",(req,res)=>{
+
+    let id = faker.string.uuid();
+    let { username, email, password } = req.body;
+    let q="insert into user values(?,?,?,?)";
+    connection.query(q,[id, username, email, password],(err, result) =>{
+            if (err) {
+            console.log(err);
+            return res.send("Some error in database");
+        }
+
+        res.redirect("/user");
+    });
+});
+
+
+
 app.listen(port,()=>{
     console.log(`Server is listening to port ${port}`);
 });

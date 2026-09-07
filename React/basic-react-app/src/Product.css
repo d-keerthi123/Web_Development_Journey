@@ -1,0 +1,9 @@
+.Product{
+    border: 1px solid black;
+    margin-bottom: 5px;
+    border-radius: 14px;
+}
+.Product ul {
+    display: inline-block;
+    text-align: left;
+}

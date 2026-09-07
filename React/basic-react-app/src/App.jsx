@@ -1,6 +1,8 @@
 
 import './App.css'
 import ProductTab from './ProductTab';
+import Msg from './Msg';
+import AmazonCardProduct from './AmazonCardProduct';
 
 // function App() {
 //   return (
@@ -11,12 +13,26 @@ import ProductTab from './ProductTab';
 //   );
 // }
 
+// function App() {
+//   return (
+//     <>
+//     <Msg name="keerthi" textColor="blue"/>
+//     <ProductTab/>
+//     </>
+//   );
+// }
+
+
 function App() {
+  let styles={textAlign:"center"};
   return (
     <>
-    <ProductTab/>
+    <h1 style={styles}>Blockbuster deals on computer accessories | shop now</h1>
+    <AmazonCardProduct/>
     </>
   );
 }
+
+
 
 export default App

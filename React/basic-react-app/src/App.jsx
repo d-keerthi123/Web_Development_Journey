@@ -3,6 +3,9 @@ import './App.css'
 import ProductTab from './ProductTab';
 import Msg from './Msg';
 import AmazonCardProduct from './AmazonCardProduct';
+import Button from './Button.jsx';
+import Counter  from './Counter.jsx';
+import LikeButton from './LikeButton.jsx';
 
 // function App() {
 //   return (
@@ -23,15 +26,39 @@ import AmazonCardProduct from './AmazonCardProduct';
 // }
 
 
+// function App() {
+//   let styles={textAlign:"center"};
+//   return (
+//     <>
+//     <h1 style={styles}>Blockbuster deals on computer accessories | shop now</h1>
+//     <AmazonCardProduct/>
+//     </>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <>
+//     <Button/>
+//     </>
+//   );
+// }
+
 function App() {
-  let styles={textAlign:"center"};
   return (
     <>
-    <h1 style={styles}>Blockbuster deals on computer accessories | shop now</h1>
-    <AmazonCardProduct/>
+    <Counter/>
     </>
   );
 }
+
+// function App() {
+//   return (
+//     <>
+//     <LikeButton/>
+//     </>
+//   );
+// }
 
 
 
